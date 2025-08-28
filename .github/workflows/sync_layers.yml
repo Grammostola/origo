@@ -1,0 +1,24 @@
+name: Sync Layer Files to GitHub Pages
+on:
+  push:
+    paths:
+      - 'data/origo-cities-3857.geojson'
+      - 'data/origo-mask-3857.geojson'
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout app repo
+        uses: actions/checkout@v4
+
+      - name: Clone, copy, commit, and push
+        run: |
+          git clone https://github.com/Grammostola/grammostola.github.io.git
+          cd grammostola.github.io
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          cp ../data/origo-cities-3857.geojson data/
+          cp ../data/origo-mask-3857.geojson data/
+          git add data/
+          git commit -m "Auto-update layer files from app repo"
+          git push https://${{ secrets.SYNC_TOKEN }}@github.com/Grammostola/grammostola.github.io.git
