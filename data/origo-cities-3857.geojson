@@ -26,6 +26,6 @@
 { "type": "Feature", "properties": { "id": 22, "name": "Orsa" }, "geometry": { "type": "Point", "coordinates": [ 1627705.0, 8653421.0 ] } },
 { "type": "Feature", "properties": { "id": 23, "name": "Tomelilla" }, "geometry": { "type": "Point", "coordinates": [ 1553290.0, 7467849.0 ] } },
 { "type": "Feature", "properties": { "id": 24, "name": "Haninge" }, "geometry": { "type": "Point", "coordinates": [ 2018984, 8216175 ] } },
-{ "type": "Feature", "properties": { "id": 24, "name": "Hämnden" }, "geometry": { "type": "Point", "coordinates": [ 2018984, 8216175 ] } }
+{ "type": "Feature", "properties": { "id": 24, "name": "Handen" }, "geometry": { "type": "Point", "coordinates": [ 2018984, 8216175 ] } }
 ]
 }
