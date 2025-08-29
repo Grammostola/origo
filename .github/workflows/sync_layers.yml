@@ -7,6 +7,8 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Grants write access to the contents (needed for pushing)
     steps:
       - name: Checkout app repo
         uses: actions/checkout@v4
@@ -21,4 +23,6 @@ jobs:
           cp ../../data/origo-mask-3857.geojson data/
           git add data/
           git commit -m "Auto-update layer files from app repo"
-          git push https://${{ secrets.FINE_SYNC_TOKEN }}@github.com/Grammostola/grammostola.github.io.git
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/Grammostola/grammostola.github.io.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
